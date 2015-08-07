@@ -1,0 +1,26 @@
+{
+    "name": "suxiaolin/yii2-make",
+    "description": "Yii2 Make theme integration",
+    "keywords": ["yii2", "theme", "make"],
+    "type": "yii2-extension",
+    "license": "BSD",
+    "support": {
+        "issues": "https://github.com/suxiaolin/yii2-make/issues",
+        "wiki": "https://github.com/suxiaolin/yii2-make/wiki",
+        "source": "https://github.com/suxiaolin/yii2-make"
+    },
+    "authors": [
+        {
+            "name": "suxiaolin",
+            "email": "suxiaolin@mail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "suxiaolin\\make\\": ""
+        }
+    }
+}
