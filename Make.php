@@ -11,6 +11,7 @@ use Yii;
 use yii\web\AssetBundle;
 use yii\base\InvalidConfigException;
 use suxiaolin\make\bundles\ThemeAsset;
+use suxiaolin\make\bundles\AllAsset;
 
 /**
  * This is the class of Make Component
@@ -46,6 +47,8 @@ class Make extends \yii\base\Component {
     public static $componentName = 'make';
     
     public static $assetsBundle;
+    
+    public static $allAssetsBundle;
 
     /**
      * Inits module
@@ -60,9 +63,13 @@ class Make extends \yii\base\Component {
         if ( ! in_array($this->layout, [self::LAYOUT1, self::LAYOUT2, self::LAYOUT3, self::LAYOUT4, self::MD_LAYOUT1, self::MD_LAYOUT2, self::MD_LAYOUT3, self::MD_LAYOUT4])) {
             throw new InvalidConfigException('Invalid configuration `layout`');
         }
+        /**
+         * 维持对所有资源文件的一个引用
+         */
+        static::$allAssetsBundle = AllAsset::register(Yii::$app->view);
     }
 
-    public function parseAssetsParams($themeAsset)
+    public function parseAssetsParams(ThemeAsset $themeAsset)
     {
         $themeAsset->sourcePath = str_replace(static::PARAM_LAYOUT, $this->layout, $themeAsset->sourcePath);
         // md-layout加上额外的css和js
@@ -78,21 +85,6 @@ class Make extends \yii\base\Component {
     public static function getComponent()
     {
         return Yii::$app->{static::$componentName};
-    }
-
-    /**
-     * Get base url to make assets
-     * @param $view View
-     * @return string
-     */
-    public static function getAssetsUrl($view)
-    {
-        if (static::$assetsBundle === null)
-        {
-            static::$assetsBundle = static::registerThemeAsset($view);
-        }
-
-        return (static::$assetsBundle instanceof AssetBundle) ? static::$assetsBundle->baseUrl : '';
     }
 
     /**
