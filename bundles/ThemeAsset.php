@@ -15,14 +15,13 @@ class ThemeAsset extends AssetBundle {
     /**
      * @var string source assets path
      */
-    public $sourcePath = '@suxiaolin/make/assets/admin/{version}';
+    public $sourcePath = '@suxiaolin/make/assets/admin/{layout}';
 
     /**
      * @var array depended bundles
      */
     public $depends = [
-        'suxiaolin\make\bundles\CoreAsset',
-        'suxiaolin\make\bundles\StyleBasedAsset',
+        'suxiaolin\make\bundles\GlobalAsset',
     ];
 
     /**
@@ -30,17 +29,13 @@ class ThemeAsset extends AssetBundle {
      */
     public $css = [
         'css/layout.css',
-        'css/themes/{theme}.css',
-        'css/custom.css',
     ];
 
     /**
      * @var array js assets
      */
     public $js = [
-        'scripts/layout.js',
-        'scripts/quick-sidebar.js',
-        'scripts/demo.js',
+        'js/layout.js',
     ];
 
     /**
@@ -48,27 +43,8 @@ class ThemeAsset extends AssetBundle {
      */
     public function init()
     {
-        $this->_handleSourcePath();
-
-        $this->_handleDynamicCss();
+        Make::getComponent()->parseAssetsParams($this);
 
         return parent::init();
     }
-
-    /**
-     * Parses source path
-     */
-    private function _handleSourcePath()
-    {
-        Make::getComponent()->parseAssetsParams($this->sourcePath);
-    }
-
-    /**
-     * Parses dynamic css
-     */
-    private function _handleDynamicCss()
-    {
-        array_walk($this->css, array(Make::getComponent(), 'parseAssetsParams'));
-    }
-
 }

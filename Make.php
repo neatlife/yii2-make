@@ -19,17 +19,21 @@ class Make extends \yii\base\Component {
     /**
      * Search string
      */
-    const PARAM_VERSION = '{version}';
-    const PARAM_THEME = '{theme}';
+    const PARAM_LAYOUT = '{layout}';
+
+    const LAYOUT1 = 'layout1';
+    const LAYOUT2 = 'layout2';
+    const LAYOUT3 = 'layout3';
+    const LAYOUT4 = 'layout4';
+    const MD_LAYOUT1 = 'md-layout1';
+    const MD_LAYOUT2 = 'md-layout2';
+    const MD_LAYOUT3 = 'md-layout3';
+    const MD_LAYOUT4 = 'md-layout4';
 
     /**
      * @var string version
      */
-    public $version = 'layout';
-    /**
-     * @var string Theme
-     */
-    public $theme = 'light';
+    public $layout;
 
     /**
      * @var array resources paths
@@ -40,21 +44,31 @@ class Make extends \yii\base\Component {
      * @var string Component name used in the application
      */
     public static $componentName = 'make';
+    
+    public static $assetsBundle;
 
     /**
      * Inits module
      */
     public function init()
     {
+        parent::init();
         Yii::setAlias('@suxiaolin/make/assets', $this->resources);
+        if ( ! isset($this->layout)) {
+            $this->layout = self::LAYOUT1;
+        }
+        if ( ! in_array($this->layout, [self::LAYOUT1, self::LAYOUT2, self::LAYOUT3, self::LAYOUT4, self::MD_LAYOUT1, self::MD_LAYOUT2, self::MD_LAYOUT3, self::MD_LAYOUT4])) {
+            throw new InvalidConfigException('Invalid configuration `layout`');
+        }
     }
 
-    public function parseAssetsParams(&$string)
+    public function parseAssetsParams($themeAsset)
     {
-        if (preg_match('/\{[a-z]+\}/', $string))
-        {
-            $string = str_replace(static::PARAM_VERSION, $this->version, $string);
-            $string = str_replace(static::PARAM_THEME, $this->theme, $string);
+        $themeAsset->sourcePath = str_replace(static::PARAM_LAYOUT, $this->layout, $themeAsset->sourcePath);
+        // md-layout加上额外的css和js
+        if (in_array($this->layout, [self::MD_LAYOUT1, self::MD_LAYOUT2, self::MD_LAYOUT3, self::MD_LAYOUT4])) {
+            array_unshift($themeAsset->css, 'material-design/css/material.css');
+            array_unshift($themeAsset->js, 'material-design/js/material.js');
         }
     }
 
