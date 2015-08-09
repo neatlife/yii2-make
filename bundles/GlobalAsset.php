@@ -46,7 +46,7 @@ class GlobalAsset extends AssetBundle {
         "plugins/mcustom-scrollbar/jquery.mCustomScrollbar.concat.min.js",
         "plugins/bootstrap-dropdown/bootstrap-hover-dropdown.min.js",
         "plugins/charts-sparkline/sparkline.min.js",
-        "plugins/retina/retina.min.js",
+        // "plugins/retina/retina.min.js",
         "plugins/select2/select2.min.js",
         "plugins/icheck/icheck.min.js",
         "plugins/backstretch/backstretch.min.js",
