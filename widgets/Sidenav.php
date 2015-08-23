@@ -7,7 +7,7 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
-class Nav extends \yii\bootstrap\Nav {
+class Sidenav extends \yii\bootstrap\Nav {
     public $dropDownCaret = '<span class="fa arrow"></span>';
     
     public function init() {
