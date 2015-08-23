@@ -60,7 +60,7 @@ class Sidenav extends \yii\bootstrap\Nav {
     
     protected function renderDropdown($items, $parentItem)
     {
-        return Dropdown::widget([
+        return Sidedropdown::widget([
             'items' => $items,
             'encodeLabels' => $this->encodeLabels,
             'clientOptions' => false,

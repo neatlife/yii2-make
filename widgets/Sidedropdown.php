@@ -8,7 +8,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-class Dropdown extends \yii\bootstrap\Dropdown {
+class Sidedropdown extends \yii\bootstrap\Dropdown {
     public $options = ['class' => 'children collapse'];
     
     public function init()
