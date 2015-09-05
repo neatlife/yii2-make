@@ -8,19 +8,26 @@ namespace suxiaolin\make\bundles;
 
 use yii\web\AssetBundle;
 
-class GlobalAsset extends AssetBundle {
-
+class CoreAsset extends AssetBundle
+{
     /**
      * @var string source assets path
      */
-    public $sourcePath = '@suxiaolin/make/assets/global';
+    public $sourcePath = '@suxiaolin/make/assets';
 
     /**
      * @var array depended packages
      */
     public $depends = [
         'yii\bootstrap\BootstrapPluginAsset',
-        'suxiaolin\make\bundles\CoreAsset',
-        'suxiaolin\make\bundles\GlobalPluginAsset',
+    ];
+
+    /**
+     * @var array css assets
+     */
+    public $css = [
+        'global/css/style.css',
+        'global/css/theme.css',
+        'global/css/ui.css',
     ];
 }

@@ -23,13 +23,13 @@ use suxiaolin\make\Make;
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a href="#" data-lang="en"><img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/flags/usa.png" alt="flag-english"> <span>English</span></a>
+            <a href="#" data-lang="en"><img src="<?= Make::$bundle->baseUrl ?>/global/images/flags/usa.png" alt="flag-english"> <span>English</span></a>
           </li>
           <li>
-            <a href="#" data-lang="es"><img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/flags/spanish.png" alt="flag-english"> <span>Español</span></a>
+            <a href="#" data-lang="es"><img src="<?= Make::$bundle->baseUrl ?>/global/images/flags/spanish.png" alt="flag-english"> <span>Español</span></a>
           </li>
           <li>
-            <a href="#" data-lang="fr"><img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/flags/french.png" alt="flag-english"> <span>Français</span></a>
+            <a href="#" data-lang="fr"><img src="<?= Make::$bundle->baseUrl ?>/global/images/flags/french.png" alt="flag-english"> <span>Français</span></a>
           </li>
         </ul>
       </li>
@@ -131,7 +131,7 @@ use suxiaolin\make\Make;
             <ul class="dropdown-menu-list withScroll" data-height="220">
               <li class="clearfix">
                 <span class="pull-left p-r-5">
-                <img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/avatars/avatar3.png" alt="avatar 3">
+                <img src="<?= Make::$bundle->baseUrl ?>/global/images/avatars/avatar3.png" alt="avatar 3">
                 </span>
                 <div class="clearfix">
                   <div>
@@ -145,7 +145,7 @@ use suxiaolin\make\Make;
               </li>
               <li class="clearfix">
                 <span class="pull-left p-r-5">
-                <img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/avatars/avatar4.png" alt="avatar 4">
+                <img src="<?= Make::$bundle->baseUrl ?>/global/images/avatars/avatar4.png" alt="avatar 4">
                 </span>
                 <div class="clearfix">
                   <div>
@@ -159,7 +159,7 @@ use suxiaolin\make\Make;
               </li>
               <li class="clearfix">
                 <span class="pull-left p-r-5">
-                <img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/avatars/avatar5.png" alt="avatar 5">
+                <img src="<?= Make::$bundle->baseUrl ?>/global/images/avatars/avatar5.png" alt="avatar 5">
                 </span>
                 <div class="clearfix">
                   <div>
@@ -173,7 +173,7 @@ use suxiaolin\make\Make;
               </li>
               <li class="clearfix">
                 <span class="pull-left p-r-5">
-                <img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/avatars/avatar6.png" alt="avatar 6">
+                <img src="<?= Make::$bundle->baseUrl ?>/global/images/avatars/avatar6.png" alt="avatar 6">
                 </span>
                 <div class="clearfix">
                   <div>
@@ -199,7 +199,7 @@ use suxiaolin\make\Make;
       <!-- BEGIN USER DROPDOWN -->
       <li class="dropdown" id="user-header">
         <a href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-        <img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/avatars/user1.png" alt="user image">
+        <img src="<?= Make::$bundle->baseUrl ?>/global/images/avatars/user1.png" alt="user image">
         <span class="username">Hi, John Doe</span>
         </a>
         <ul class="dropdown-menu">

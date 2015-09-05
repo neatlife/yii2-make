@@ -15,7 +15,7 @@ class ThemeAsset extends AssetBundle {
     /**
      * @var string source assets path
      */
-    public $sourcePath = '@suxiaolin/make/assets/admin/{layout}';
+    public $sourcePath = '@suxiaolin/make/assets';
 
     /**
      * @var array depended bundles
@@ -28,14 +28,14 @@ class ThemeAsset extends AssetBundle {
      * @var array css assets
      */
     public $css = [
-        'css/layout.css',
+        'admin/{layout}/css/layout.css',
     ];
 
     /**
      * @var array js assets
      */
     public $js = [
-        'js/layout.js',
+        'admin/{layout}/js/layout.js',
     ];
 
     /**
@@ -43,7 +43,7 @@ class ThemeAsset extends AssetBundle {
      */
     public function init()
     {
-        Make::getComponent()->parseAssetsParams($this);
+        Make::getComponent()->takeLayout($this);
 
         return parent::init();
     }

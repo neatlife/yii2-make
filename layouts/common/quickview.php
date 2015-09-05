@@ -34,7 +34,7 @@ use suxiaolin\make\Make;
             <ul>
               <li class="clearfix">
                 <div class="user-img">
-                  <img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/avatars/avatar13.png" alt="avatar" />
+                  <img src="<?= Make::$bundle->baseUrl ?>/global/images/avatars/avatar13.png" alt="avatar" />
                 </div>
                 <div class="user-details">
                   <div class="user-name">Bobby Brown</div>
@@ -46,7 +46,7 @@ use suxiaolin\make\Make;
               </li>
               <li class="clearfix">
                 <div class="user-img">
-                  <img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/avatars/avatar5.png" alt="avatar" />
+                  <img src="<?= Make::$bundle->baseUrl ?>/global/images/avatars/avatar5.png" alt="avatar" />
                   <div class="pull-right badge badge-danger">3</div>
                 </div>
                 <div class="user-details">
@@ -59,7 +59,7 @@ use suxiaolin\make\Make;
               </li>
               <li class="clearfix">
                 <div class="user-img">
-                  <img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/avatars/avatar10.png" alt="avatar" />
+                  <img src="<?= Make::$bundle->baseUrl ?>/global/images/avatars/avatar10.png" alt="avatar" />
                 </div>
                 <div class="user-details">
                   <div class="user-name">Bobby Brown</div>
@@ -76,7 +76,7 @@ use suxiaolin\make\Make;
             <ul>
               <li class="clearfix">
                 <div class="user-img">
-                  <img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/avatars/avatar7.png" alt="avatar" />
+                  <img src="<?= Make::$bundle->baseUrl ?>/global/images/avatars/avatar7.png" alt="avatar" />
                   <div class="pull-right badge badge-danger">3</div>
                 </div>
                 <div class="user-details">
@@ -89,7 +89,7 @@ use suxiaolin\make\Make;
               </li>
               <li class="clearfix">
                 <div class="user-img">
-                  <img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/avatars/avatar11.png" alt="avatar" />
+                  <img src="<?= Make::$bundle->baseUrl ?>/global/images/avatars/avatar11.png" alt="avatar" />
                 </div>
                 <div class="user-details">
                   <div class="user-name">Fred Smith</div>
@@ -101,7 +101,7 @@ use suxiaolin\make\Make;
               </li>
               <li class="clearfix">
                 <div class="user-img">
-                  <img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/avatars/avatar8.png" alt="avatar" />
+                  <img src="<?= Make::$bundle->baseUrl ?>/global/images/avatars/avatar8.png" alt="avatar" />
                 </div>
                 <div class="user-details">
                   <div class="user-name">Ben Addams</div>
@@ -132,7 +132,7 @@ use suxiaolin\make\Make;
                 <div class="chat-detail">
                   <span class="chat-date">today, 10:38pm</span>
                   <div class="conversation-img">
-                    <img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/avatars/avatar4.png" alt="avatar 4"/>
+                    <img src="<?= Make::$bundle->baseUrl ?>/global/images/avatars/avatar4.png" alt="avatar 4"/>
                   </div>
                   <div class="chat-bubble">
                     <span>Hi you!</span>
@@ -143,7 +143,7 @@ use suxiaolin\make\Make;
                 <div class="chat-detail">
                   <span class="chat-date">today, 10:45pm</span>
                   <div class="conversation-img">
-                    <img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/avatars/avatar4.png" alt="avatar 4"/>
+                    <img src="<?= Make::$bundle->baseUrl ?>/global/images/avatars/avatar4.png" alt="avatar 4"/>
                   </div>
                   <div class="chat-bubble">
                     <span>Are you there?</span>
@@ -154,7 +154,7 @@ use suxiaolin\make\Make;
                 <div class="chat-detail">
                   <span class="chat-date">today, 10:51pm</span>
                   <div class="conversation-img">
-                    <img src="<?= Make::$allAssetsBundle->baseUrl ?>/global/images/avatars/avatar4.png" alt="avatar 4"/>
+                    <img src="<?= Make::$bundle->baseUrl ?>/global/images/avatars/avatar4.png" alt="avatar 4"/>
                   </div>
                   <div class="chat-bubble">
                     <span>Send me a message when you come back.</span>

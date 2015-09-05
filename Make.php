@@ -11,7 +11,6 @@ use Yii;
 use yii\web\AssetBundle;
 use yii\base\InvalidConfigException;
 use suxiaolin\make\bundles\ThemeAsset;
-use suxiaolin\make\bundles\AllAsset;
 
 /**
  * This is the class of Make Component
@@ -46,9 +45,7 @@ class Make extends \yii\base\Component {
      */
     public static $componentName = 'make';
     
-    public static $assetsBundle;
-    
-    public static $allAssetsBundle;
+    public static $bundle;
 
     /**
      * Inits module
@@ -63,19 +60,21 @@ class Make extends \yii\base\Component {
         if ( ! in_array($this->layout, [self::LAYOUT1, self::LAYOUT2, self::LAYOUT3, self::LAYOUT4, self::MD_LAYOUT1, self::MD_LAYOUT2, self::MD_LAYOUT3, self::MD_LAYOUT4])) {
             throw new InvalidConfigException('Invalid configuration `layout`');
         }
-        /**
-         * 维持对所有资源文件的一个引用
-         */
-        static::$allAssetsBundle = AllAsset::register(Yii::$app->view);
     }
 
-    public function parseAssetsParams(ThemeAsset $themeAsset)
+    public function takeLayout(ThemeAsset $themeAsset)
     {
-        $themeAsset->sourcePath = str_replace(static::PARAM_LAYOUT, $this->layout, $themeAsset->sourcePath);
         // md-layout加上额外的css和js
         if (in_array($this->layout, [self::MD_LAYOUT1, self::MD_LAYOUT2, self::MD_LAYOUT3, self::MD_LAYOUT4])) {
-            array_unshift($themeAsset->css, 'material-design/css/material.css');
-            array_unshift($themeAsset->js, 'material-design/js/material.js');
+            array_unshift($themeAsset->css, 'admin/{layout}/material-design/css/material.css');
+            array_unshift($themeAsset->js, 'admin/{layout}/material-design/js/material.js');
+        }
+
+        foreach($themeAsset->css as &$css) {
+            $css = str_replace(static::PARAM_LAYOUT, $this->layout, $css);
+        }
+        foreach($themeAsset->js as &$js) {
+            $js = str_replace(static::PARAM_LAYOUT, $this->layout, $js);
         }
     }
 
@@ -94,6 +93,6 @@ class Make extends \yii\base\Component {
      */
     public static function registerThemeAsset($view)
     {
-        return static::$assetsBundle = ThemeAsset::register($view);
+        return static::$bundle = ThemeAsset::register($view);
     }
 }
